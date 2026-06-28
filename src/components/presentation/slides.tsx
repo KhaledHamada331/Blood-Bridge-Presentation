@@ -1,14 +1,20 @@
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
+  ArrowRight,
   Award,
   Bell,
   Brain,
+  Calendar,
+  Check,
   CheckCircle2,
+  Clock,
   Cloud,
   Code2,
   Database,
   Droplet,
+  FileText,
+  Filter,
   Globe,
   Heart,
   Hospital,
@@ -20,6 +26,7 @@ import {
   Radio,
   Server,
   Shield,
+  ShieldAlert,
   ShieldCheck,
   Smartphone,
   Sparkles,
@@ -99,12 +106,42 @@ export function Slide01() {
 
 /* ============ SLIDE 2 — TEAM ============ */
 const team = [
-  { name: "Youssef Esmail Youssef", role: "Team Leader & Flutter Developer", initials: "YE", color: "from-red-700 to-rose-900" },
-  { name: "Ahmed Khaled Abdullah", role: "Flutter Developer", initials: "AK", color: "from-rose-700 to-red-900" },
-  { name: "Khaled Mohamed Ali", role: "Backend Developer", initials: "KM", color: "from-red-600 to-pink-900" },
-  { name: "Khaled Hamada Mohamed", role: "Backend Developer", initials: "KH", color: "from-rose-600 to-red-800" },
-  { name: "Ahmed Abd El_Nasser Al Metwally ", role: "AI & NLP Engineer", initials: "AN", color: "from-red-800 to-rose-950" },
-  { name: "Youssef Samir Shawkey", role: "AI & NLP Engineer", initials: "YS", color: "from-pink-700 to-red-900" },
+  {
+    name: "Youssef Esmail Youssef",
+    role: "Team Leader & Flutter Developer",
+    initials: "YE",
+    color: "from-red-700 to-rose-900",
+  },
+  {
+    name: "Ahmed Khaled Abdullah",
+    role: "Flutter Developer",
+    initials: "AK",
+    color: "from-rose-700 to-red-900",
+  },
+  {
+    name: "Khaled Mohamed Ali",
+    role: "Backend Developer",
+    initials: "KM",
+    color: "from-red-600 to-pink-900",
+  },
+  {
+    name: "Khaled Hamada Mohamed",
+    role: "Backend Developer",
+    initials: "KH",
+    color: "from-rose-600 to-red-800",
+  },
+  {
+    name: "Ahmed Abd El_Nasser Al Metwally ",
+    role: "AI & NLP Engineer",
+    initials: "AN",
+    color: "from-red-800 to-rose-950",
+  },
+  {
+    name: "Youssef Samir Shawkey",
+    role: "AI & NLP Engineer",
+    initials: "YS",
+    color: "from-pink-700 to-red-900",
+  },
 ];
 export function Slide02() {
   return (
@@ -175,8 +212,8 @@ export function Slide03() {
         >
           <p>
             <span className="text-foreground">Blood Bridge</span> is a graduation-project platform
-            that combines mobile access, AI-based matching, and real-time coordination to reduce
-            the delay between an urgent blood request and a life-saving response.
+            that combines mobile access, AI-based matching, and real-time coordination to reduce the
+            delay between an urgent blood request and a life-saving response.
           </p>
           <p>
             The system connects donors, recipients, hospitals, and administrators in one secure
@@ -400,12 +437,36 @@ export function Slide06() {
 /* ============ SLIDE 7 — SOLUTION ============ */
 export function Slide07() {
   const feats = [
-    { icon: Target, title: "Smart Matching", desc: "AI ranks compatible donors by blood type, proximity, and availability" },
-    { icon: MapPin, title: "Geo-Enabled Requests", desc: "Live location-based routing across governorates and districts" },
-    { icon: Bell, title: "Priority Alerts", desc: "Urgent notifications reach donors and hospitals in real time" },
-    { icon: Hospital, title: "Hospital Coordination", desc: "Inventory visibility and request management in one workspace" },
-    { icon: ShieldCheck, title: "Verified Eligibility", desc: "Identity checks and donor constraints are handled before matching" },
-    { icon: Trophy, title: "Impact Tracking", desc: "Badges and progress encourage repeated, reliable contribution" },
+    {
+      icon: Target,
+      title: "Smart Matching",
+      desc: "AI ranks compatible donors by blood type, proximity, and availability",
+    },
+    {
+      icon: MapPin,
+      title: "Geo-Enabled Requests",
+      desc: "Live location-based routing across governorates and districts",
+    },
+    {
+      icon: Bell,
+      title: "Priority Alerts",
+      desc: "Urgent notifications reach donors and hospitals in real time",
+    },
+    {
+      icon: Hospital,
+      title: "Hospital Coordination",
+      desc: "Inventory visibility and request management in one workspace",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Verified Eligibility",
+      desc: "Identity checks and donor constraints are handled before matching",
+    },
+    {
+      icon: Trophy,
+      title: "Impact Tracking",
+      desc: "Badges and progress encourage repeated, reliable contribution",
+    },
   ];
   return (
     <div className="slide-shell">
@@ -486,9 +547,7 @@ export function Slide08() {
             variants={fadeUp}
             className="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-card/60"
           >
-            <div
-              className={`flex items-center gap-3 bg-gradient-to-br ${r.color} p-5`}
-            >
+            <div className={`flex items-center gap-3 bg-gradient-to-br ${r.color} p-5`}>
               <r.icon className="h-7 w-7" />
               <div className="font-display text-xl font-semibold">{r.title}</div>
             </div>
@@ -511,8 +570,18 @@ export function Slide08() {
 export function Slide09() {
   const tiers = [
     { icon: Smartphone, title: "Mobile UI", sub: "Flutter · Dart", color: "border-blue-500/40" },
-    { icon: Server, title: "REST API & AI Engine", sub: ".NET Core · SignalR · NLP", color: "border-blood/50" },
-    { icon: Database, title: "Data Layer", sub: "SQL Server · Encrypted Storage", color: "border-purple-500/40" },
+    {
+      icon: Server,
+      title: "REST API & AI Engine",
+      sub: ".NET Core · SignalR · NLP",
+      color: "border-blood/50",
+    },
+    {
+      icon: Database,
+      title: "Data Layer",
+      sub: "SQL Server · Encrypted Storage",
+      color: "border-purple-500/40",
+    },
   ];
   return (
     <div className="slide-shell">
@@ -618,8 +687,335 @@ export function Slide11() {
   );
 }
 
-/* ============ SLIDE 12 — GEOLOCATION ============ */
+/* ============ SLIDE 12 - AI OVERVIEW ============ */
 export function Slide12() {
+  const modules = [
+    {
+      icon: ShieldAlert,
+      title: "Emergency Classification",
+      desc: "NLP classifies blood request urgency into HIGH / MEDIUM / LOW priority.",
+    },
+    {
+      icon: UserCheck,
+      title: "Intelligent Donor Ranking",
+      desc: "Weighted scoring ranks eligible donors for fastest safe response.",
+    },
+    {
+      icon: Clock,
+      title: "Best Donation Time",
+      desc: "ML predicts the optimal hour to contact each donor for max acceptance.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Blood Demand Forecasting",
+      desc: "Random Forest forecasts future inventory risk before shortages occur.",
+    },
+  ];
+  return (
+    <div className="slide-shell">
+      <SlideTitle kicker="AI Layer" title="Artificial Intelligence in Blood Bridge" />
+      <motion.div
+        variants={stagger(0.1)}
+        initial="hidden"
+        animate="show"
+        className="grid flex-1 grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4"
+      >
+        {modules.map((m) => (
+          <motion.div
+            key={m.title}
+            variants={fadeUp}
+            className="rounded-2xl border border-white/10 bg-card/60 p-6 transition-all hover:border-blood/50"
+          >
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blood/20 text-blood">
+              <m.icon className="h-7 w-7" />
+            </div>
+            <div className="font-display text-xl font-semibold">{m.title}</div>
+            <div className="mt-3 text-base leading-relaxed text-muted-foreground">{m.desc}</div>
+          </motion.div>
+        ))}
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+        className="mt-6 rounded-2xl border border-blood/30 bg-blood/10 p-5 text-xl leading-relaxed text-muted-foreground"
+      >
+        These AI modules help the system make faster and smarter decisions, reduce response time,
+        and improve blood inventory management.
+      </motion.div>
+    </div>
+  );
+}
+
+/* ============ SLIDE 13 - EMERGENCY CLASSIFICATION ============ */
+export function Slide13() {
+  const categories = [
+    { label: "Critical Emergency", priority: "HIGH", color: "border-blood bg-blood/20" },
+    { label: "Moderate Urgency", priority: "MEDIUM", color: "border-white/20 bg-card/60" },
+    { label: "Routine Request", priority: "LOW", color: "border-white/10 bg-card/40" },
+  ];
+  return (
+    <div className="slide-shell">
+      <SlideTitle kicker="AI Module - 01" title="Emergency Classification" />
+      <div className="grid flex-1 grid-cols-1 gap-8 lg:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col justify-center rounded-3xl border border-white/10 bg-card/60 p-7"
+        >
+          <div className="mb-5 flex items-center gap-3 text-blood">
+            <Brain className="h-8 w-8" />
+            <div>
+              <div className="font-display text-xl font-semibold">Model: HuggingFace BART Large MNLI</div>
+              <div className="mt-1 text-base text-muted-foreground">Method: Zero-Shot Classification</div>
+            </div>
+          </div>
+          <motion.div variants={stagger(0.1)} initial="hidden" animate="show" className="space-y-3">
+            {categories.map((c) => (
+              <motion.div
+                key={c.label}
+                variants={fadeUp}
+                className={`flex items-center justify-between rounded-2xl border p-4 ${c.color}`}
+              >
+                <span className="text-xl font-semibold">{c.label}</span>
+                <span className="rounded-full bg-black/20 px-3 py-1 font-mono text-xs font-bold text-blood">
+                  {c.priority}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="flex flex-col justify-center rounded-3xl border border-blood/35 bg-gradient-to-br from-blood/20 to-transparent p-7"
+        >
+          <div className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-blood">
+            <FileText className="h-4 w-4" /> Example Input
+          </div>
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4 font-mono text-base leading-relaxed text-muted-foreground">
+            "O- needed now for trauma patient at Assiut University Hospital. Critical bleeding."
+          </div>
+          <div className="mt-5 grid grid-cols-2 gap-3 text-center">
+            {[
+              ["Label", "Critical"],
+              ["Priority", "HIGH"],
+              ["Confidence", "94%"],
+              ["Fallback", "Manual Review"],
+            ].map(([k, v]) => (
+              <div key={k} className="rounded-xl border border-white/10 bg-card/70 p-3">
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{k}</div>
+                <div className="mt-1 font-display text-xl font-bold text-blood">{v}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ SLIDE 14 - INTELLIGENT DONOR MATCHING ============ */
+export function Slide14() {
+  const filters = [
+    {
+      icon: Droplet,
+      step: "Step 1",
+      title: "Blood Type Compatibility",
+      desc: "Filter donors by ABO/Rh compatibility rules.",
+    },
+    {
+      icon: Calendar,
+      step: "Step 2",
+      title: "Donation Interval Check",
+      desc: "Ensure at least 90 days have passed since the last donation.",
+    },
+    {
+      icon: Target,
+      step: "Step 3",
+      title: "Donor Score Calculation",
+      desc: "Score = Distance (40%) + Activity (30%) + Response Rate (30%)",
+    },
+  ];
+  return (
+    <div className="slide-shell">
+      <SlideTitle kicker="AI Module - 02" title="Intelligent Donor Matching" />
+      <div className="grid flex-1 grid-cols-1 gap-8 lg:grid-cols-5">
+        <motion.div
+          variants={stagger(0.1)}
+          initial="hidden"
+          animate="show"
+          className="col-span-1 grid gap-4 lg:col-span-3"
+        >
+          {filters.map((f) => (
+            <motion.div
+              key={f.title}
+              variants={fadeUp}
+              className="flex items-start gap-4 rounded-2xl border border-white/10 bg-card/60 p-5"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blood/20 text-blood">
+                <f.icon className="h-6 w-6" />
+              </div>
+              <div>
+                <div className="font-mono text-xs uppercase tracking-widest text-blood">{f.step}</div>
+                <div className="mt-1 font-display text-xl font-semibold">{f.title}</div>
+                <div className="mt-2 text-base leading-relaxed text-muted-foreground">{f.desc}</div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="col-span-1 flex flex-col justify-center rounded-3xl border border-blood/40 bg-blood/10 p-7 lg:col-span-2"
+        >
+          <UserCheck className="mb-4 h-10 w-10 text-blood" />
+          <div className="font-display text-2xl font-bold">Ranked donor shortlist</div>
+          <div className="mt-5 space-y-3">
+            {[
+              ["#1", "Highest score - contacted first"],
+              ["#2", "Second priority"],
+              ["#3", "Reserve candidate"],
+            ].map(([rank, desc]) => (
+              <div key={rank} className="flex items-center gap-3 rounded-xl border border-white/10 bg-card/60 p-4">
+                <div className="font-display text-2xl font-bold text-blood">{rank}</div>
+                <div className="text-xl text-muted-foreground">{desc}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+/* ============ SLIDE 15 - MACHINE LEARNING MODELS ============ */
+export function Slide15() {
+  const models = [
+    {
+      icon: Clock,
+      title: "Best Donation Time Model",
+      algo: "Random Forest Regressor",
+      features: ["Day of week", "Time of day", "Blood type"],
+      output: "Optimal hour to contact each donor",
+      benefit: "Higher donor acceptance rate",
+    },
+    {
+      icon: TrendingUp,
+      title: "Blood Demand Forecasting Model",
+      algo: "Random Forest Regressor",
+      features: ["Historical demand", "Current stock", "Blood type", "Date features"],
+      output: "Predicted demand vs. available stock",
+      benefit: "Flags HIGH RISK before shortage",
+    },
+  ];
+  return (
+    <div className="slide-shell">
+      <SlideTitle kicker="AI Module - 03" title="Machine Learning Models" />
+      <motion.div
+        variants={stagger(0.12)}
+        initial="hidden"
+        animate="show"
+        className="grid flex-1 grid-cols-1 gap-6 lg:grid-cols-2"
+      >
+        {models.map((m) => (
+          <motion.div key={m.title} variants={fadeUp} className="rounded-3xl border border-white/10 bg-card/60 p-7">
+            <div className="mb-5 flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blood/20 text-blood">
+                <m.icon className="h-6 w-6" />
+              </div>
+              <div>
+                <div className="font-display text-2xl font-semibold">{m.title}</div>
+                <div className="mt-1 font-mono text-xs uppercase tracking-widest text-blood">{m.algo}</div>
+              </div>
+            </div>
+            <div className="mb-3 text-sm font-semibold uppercase tracking-widest text-muted-foreground">Input Features</div>
+            <div className="flex flex-wrap gap-2">
+              {m.features.map((f) => (
+                <span key={f} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-base">
+                  {f}
+                </span>
+              ))}
+            </div>
+            <div className="mt-5 rounded-xl border border-white/10 bg-black/20 p-4 text-xl text-muted-foreground">
+              Output: <span className="text-foreground">{m.output}</span>
+            </div>
+            <div className="mt-4 rounded-xl border border-blood/30 bg-blood/10 p-4 text-xl font-semibold text-blood">
+              ✦ {m.benefit}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
+/* ============ SLIDE 16 - AI WORKFLOW & BENEFITS ============ */
+export function Slide16() {
+  const steps = [
+    { icon: FileText, label: "Blood request received" },
+    { icon: Brain, label: "NLP classifies urgency" },
+    { icon: Filter, label: "Compatible donors filtered" },
+    { icon: Target, label: "Donors ranked by score" },
+    { icon: Bell, label: "Best time to notify selected" },
+    { icon: TrendingUp, label: "Future demand predicted" },
+  ];
+  return (
+    <div className="slide-shell">
+      <SlideTitle kicker="AI Module - 04" title="AI Workflow & Benefits" />
+      <div className="grid flex-1 grid-cols-1 gap-8 lg:grid-cols-5">
+        <motion.div
+          variants={stagger(0.08)}
+          initial="hidden"
+          animate="show"
+          className="col-span-1 grid gap-3 lg:col-span-3"
+        >
+          {steps.map((s, i) => (
+            <motion.div
+              key={s.label}
+              variants={fadeUp}
+              className="flex items-center gap-4 rounded-2xl border border-white/10 bg-card/60 p-4"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blood/20 text-blood">
+                <s.icon className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="font-mono text-xs text-blood">{String(i + 1).padStart(2, "0")}</div>
+                <div className="text-xl font-semibold">{s.label}</div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.7 }}
+          className="col-span-1 flex flex-col justify-center rounded-3xl border border-blood/35 bg-gradient-to-br from-blood/15 to-transparent p-7 lg:col-span-2"
+        >
+          {[
+            ["⚡", "Faster response time"],
+            ["🎯", "Better donor selection"],
+            ["📦", "Smarter inventory management"],
+          ].map(([icon, text]) => (
+            <div key={text} className="mb-3 flex items-center gap-3 rounded-xl border border-white/10 bg-card/60 p-4">
+              <span className="text-2xl">{icon}</span>
+              <span className="text-xl font-semibold">{text}</span>
+            </div>
+          ))}
+          <div className="mt-4 rounded-xl border border-blood/30 bg-black/20 p-5 text-xl leading-relaxed text-muted-foreground">
+            "AI is the core of Blood Bridge - instead of storing donor info, our system analyzes
+            data, predicts future needs, and helps healthcare providers make faster decisions."
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+/* ============ SLIDE 17 — GEOLOCATION ============ */
+export function Slide17() {
   const stats = [
     { n: 27, label: "Governorates", suffix: "" },
     { n: 2, label: "Match Time", suffix: "s", prefix: "<" },
@@ -684,8 +1080,8 @@ export function Slide12() {
   );
 }
 
-/* ============ SLIDE 13 — AI ============ */
-export function Slide13() {
+/* ============ SLIDE 18 — AI ============ */
+export function Slide18() {
   const criteria = [
     { label: "Blood Type Compatibility", weight: 40 },
     { label: "Distance", weight: 30 },
@@ -766,15 +1162,17 @@ function PhoneMockup({
     >
       <div className="relative aspect-[9/19] rounded-[2rem] border-4 border-white/15 bg-gradient-to-b from-navy to-navy-deep p-3 shadow-[0_20px_60px_oklch(0_0_0/0.5)]">
         <div className="absolute left-1/2 top-2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-white/20" />
-        <div className="mt-4 flex h-full flex-col gap-2 overflow-hidden text-[10px]">{children}</div>
+        <div className="mt-4 flex h-full flex-col gap-2 overflow-hidden text-[10px]">
+          {children}
+        </div>
       </div>
       <div className="mt-3 text-center text-sm font-medium text-muted-foreground">{title}</div>
     </motion.div>
   );
 }
 
-/* ============ SLIDE 14 — AUTH ============ */
-export function Slide14() {
+/* ============ SLIDE 19 — AUTH ============ */
+export function Slide19() {
   return (
     <div className="slide-shell">
       <SlideTitle kicker="App Screens" title="Authentication Flow" />
@@ -837,8 +1235,8 @@ export function Slide14() {
   );
 }
 
-/* ============ SLIDE 15 — DONOR DASHBOARD ============ */
-export function Slide15() {
+/* ============ SLIDE 20 — DONOR DASHBOARD ============ */
+export function Slide20() {
   return (
     <div className="slide-shell">
       <SlideTitle kicker="App Screens" title="Donor Dashboard" />
@@ -896,8 +1294,8 @@ export function Slide15() {
   );
 }
 
-/* ============ SLIDE 16 — GAMIFICATION ============ */
-export function Slide16() {
+/* ============ SLIDE 21 — GAMIFICATION ============ */
+export function Slide21() {
   const badges = [
     { icon: Droplet, name: "First Drop" },
     { icon: Zap, name: "Quick Responder" },
@@ -963,8 +1361,8 @@ export function Slide16() {
   );
 }
 
-/* ============ SLIDE 17 — NOTIFICATIONS ============ */
-export function Slide17() {
+/* ============ SLIDE 22 — NOTIFICATIONS ============ */
+export function Slide22() {
   const rows = [
     {
       label: "CRITICAL",
@@ -1034,8 +1432,8 @@ export function Slide17() {
   );
 }
 
-/* ============ SLIDE 18 — SECURITY ============ */
-export function Slide18() {
+/* ============ SLIDE 23 — SECURITY ============ */
+export function Slide23() {
   const items = [
     { icon: Lock, title: "JWT Tokens", desc: "Stateless authenticated sessions" },
     { icon: Shield, title: "AES-256", desc: "Encryption for PII at rest" },
@@ -1078,8 +1476,8 @@ export function Slide18() {
   );
 }
 
-/* ============ SLIDE 19 — DB SCHEMA ============ */
-export function Slide19() {
+/* ============ SLIDE 24 — DB SCHEMA ============ */
+export function Slide24() {
   const entities = [
     { id: "users", title: "Users", x: 50, y: 50 },
     { id: "requests", title: "BloodRequests", x: 350, y: 50 },
@@ -1158,8 +1556,8 @@ export function Slide19() {
   );
 }
 
-/* ============ SLIDE 20 — TESTING ============ */
-export function Slide20() {
+/* ============ SLIDE 25 — TESTING ============ */
+export function Slide25() {
   const stats = [
     { n: 95, suffix: "%", label: "Code Coverage", ring: true },
     { n: 47, suffix: "", label: "API Endpoints" },
@@ -1181,7 +1579,14 @@ export function Slide20() {
             {s.ring ? (
               <div className="relative h-32 w-32">
                 <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-                  <circle cx="50" cy="50" r="42" fill="none" stroke="oklch(1 0 0 / 0.1)" strokeWidth="8" />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="42"
+                    fill="none"
+                    stroke="oklch(1 0 0 / 0.1)"
+                    strokeWidth="8"
+                  />
                   <motion.circle
                     cx="50"
                     cy="50"
@@ -1213,8 +1618,8 @@ export function Slide20() {
   );
 }
 
-/* ============ SLIDE 21 — CHALLENGES ============ */
-export function Slide21() {
+/* ============ SLIDE 26 — CHALLENGES ============ */
+export function Slide26() {
   const rows = [
     ["Sparse data for AI training", "Synthetic dataset + transfer learning"],
     ["Real-time matching at scale", "SignalR hubs + Redis pub/sub layer"],
@@ -1258,8 +1663,8 @@ export function Slide21() {
   );
 }
 
-/* ============ SLIDE 22 — PERFORMANCE ============ */
-export function Slide22() {
+/* ============ SLIDE 27 — PERFORMANCE ============ */
+export function Slide27() {
   const stats = [
     { n: 2, suffix: "s", prefix: "<", label: "Match Time" },
     { n: 99.7, suffix: "%", decimals: 1, label: "Uptime" },
@@ -1289,8 +1694,8 @@ export function Slide22() {
   );
 }
 
-/* ============ SLIDE 23 — COMPARISON ============ */
-export function Slide23() {
+/* ============ SLIDE 28 — COMPARISON ============ */
+export function Slide28() {
   const rows: [string, string, string, string][] = [
     ["Verified donors", "✅", "❌", "⚠️"],
     ["Real-time matching", "✅", "❌", "❌"],
@@ -1349,7 +1754,11 @@ export function Slide23() {
           className="divide-y divide-white/5"
         >
           {rows.map((r) => (
-            <motion.div key={r[0]} variants={fadeUp} className="grid grid-cols-1 gap-4 px-6 py-3 md:grid-cols-4">
+            <motion.div
+              key={r[0]}
+              variants={fadeUp}
+              className="grid grid-cols-1 gap-4 px-6 py-3 md:grid-cols-4"
+            >
               <div>{r[0]}</div>
               <div className="text-center text-xl">{cell(r[1])}</div>
               <div className="text-center text-xl">{cell(r[2])}</div>
@@ -1362,8 +1771,8 @@ export function Slide23() {
   );
 }
 
-/* ============ SLIDE 24 — ROADMAP ============ */
-export function Slide24() {
+/* ============ SLIDE 29 — ROADMAP ============ */
+export function Slide29() {
   const phases = [
     {
       tag: "Phase 2",
@@ -1421,8 +1830,8 @@ export function Slide24() {
   );
 }
 
-/* ============ SLIDE 25 — IMPACT ============ */
-export function Slide25() {
+/* ============ SLIDE 30 — IMPACT ============ */
+export function Slide30() {
   const stats = [
     { n: 70, suffix: "%", label: "Faster response" },
     { n: 3, suffix: "x", label: "More donors reached" },
@@ -1462,8 +1871,8 @@ export function Slide25() {
   );
 }
 
-/* ============ SLIDE 26 — ACKNOWLEDGEMENTS ============ */
-export function Slide26() {
+/* ============ SLIDE 31 — ACKNOWLEDGEMENTS ============ */
+export function Slide31() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -1497,8 +1906,9 @@ export function Slide26() {
         transition={{ delay: 1.8, duration: 0.8 }}
         className="relative z-10 mt-12 max-w-2xl text-center text-base text-muted-foreground"
       >
-        To the Faculty of Computers and Information at <span className="text-foreground">Assiut University</span> — thank you for
-        the foundation, the labs, and the late nights.
+        To the Faculty of Computers and Information at{" "}
+        <span className="text-foreground">Assiut University</span> — thank you for the foundation,
+        the labs, and the late nights.
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -1512,8 +1922,8 @@ export function Slide26() {
   );
 }
 
-/* ============ SLIDE 27 — Q&A ============ */
-export function Slide27() {
+/* ============ SLIDE 32 — Q&A ============ */
+export function Slide32() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -1557,8 +1967,8 @@ export function Slide27() {
   );
 }
 
-/* ============ SLIDE 28 — THANK YOU ============ */
-export function Slide28() {
+/* ============ SLIDE 33 — THANK YOU ============ */
+export function Slide33() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center overflow-hidden radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-40" />
@@ -1607,18 +2017,75 @@ export function Slide28() {
 }
 
 export const ALL_SLIDES = [
-  Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08, Slide09, Slide10,
-  Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20,
-  Slide21, Slide22, Slide23, Slide24, Slide25, Slide26, Slide27, Slide28,
+  Slide01,
+  Slide02,
+  Slide03,
+  Slide04,
+  Slide05,
+  Slide06,
+  Slide07,
+  Slide08,
+  Slide09,
+  Slide10,
+  Slide11,
+  Slide12,
+  Slide13,
+  Slide14,
+  Slide15,
+  Slide16,
+  Slide17,
+  Slide18,
+  Slide19,
+  Slide20,
+  Slide21,
+  Slide22,
+  Slide23,
+  Slide24,
+  Slide25,
+  Slide26,
+  Slide27,
+  Slide28,
+  Slide29,
+  Slide30,
+  Slide31,
+  Slide32,
+  Slide33,
 ];
 
 export const SLIDE_TITLES = [
-  "Welcome", "Team", "Abstract", "Problem · Delay", "Problem · Fragmentation",
-  "Problem · Inventory", "Solution", "Stakeholders", "Architecture", "Flutter Stack",
-  ".NET Stack", "Geolocation", "AI Matching", "Auth Flow", "Donor Dashboard",
-  "Gamification", "Notifications", "Security", "Database", "Testing",
-  "Challenges", "Performance", "Comparison", "Roadmap", "Impact",
-  "Acknowledgements", "Q&A", "Thank You",
+  "Welcome",
+  "Team",
+  "Abstract",
+  "Problem · Delay",
+  "Problem · Fragmentation",
+  "Problem · Inventory",
+  "Solution",
+  "Stakeholders",
+  "Architecture",
+  "Flutter Stack",
+  ".NET Stack",
+  "AI Overview",
+  "Emergency Classification",
+  "Intelligent Donor Matching",
+  "Machine Learning Models",
+  "AI Workflow & Benefits",
+  "Geolocation",
+  "AI Matching",
+  "Auth Flow",
+  "Donor Dashboard",
+  "Gamification",
+  "Notifications",
+  "Security",
+  "Database",
+  "Testing",
+  "Challenges",
+  "Performance",
+  "Comparison",
+  "Roadmap",
+  "Impact",
+  "Acknowledgements",
+  "Q&A",
+  "Thank You",
 ];
 
 // keep helper used internally

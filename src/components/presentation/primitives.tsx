@@ -104,7 +104,7 @@ export function SlideTitle({
       )}
       <motion.h2
         variants={fadeUp}
-        className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl"
+        className="font-display text-4xl font-bold leading-tight tracking-tight"
       >
         {title}
       </motion.h2>
