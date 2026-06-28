@@ -6,6 +6,11 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:cloudflare": "vite build",
+    "deploy:cloudflare": "npx wrangler pages deploy .output/public --project-name blood-bridge-project",
+    "vercel-build": "vite build",
+    "deploy:vercel": "npx vercel --prod --confirm",
+    "deploy": "npx vercel --prod --confirm",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

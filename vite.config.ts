@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Ensure Nitro targets Vercel for server runtime output (avoids Cloudflare-only output)
+  nitro: {
+    preset: "vercel",
+  },
 });
