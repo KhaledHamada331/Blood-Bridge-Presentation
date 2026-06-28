@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Lovable & Tooling caches
+.lovable/
+.workspace/
+.tanstack/
+
+# TS build info
+*.tsbuildinfo
+
+# Production build output (لو ظهر عندك بعد كده)
+dist/
+build/
+
+# Environment variables (مهم جداً لو ضفت ملفات .env بعدين)
+.env
+.env.local
+.env.*.local
