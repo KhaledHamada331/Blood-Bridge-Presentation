@@ -1174,9 +1174,9 @@ function PhoneMockup({
 /* ============ SLIDE 19 — AUTH ============ */
 export function Slide19() {
   const screens = [
-    { src: "/src/img/Login.png",         label: "Sign In"        },
-    { src: "/src/img/RoleSelection.png", label: "Role Selection" },
-    { src: "/src/img/Permissions.png",   label: "Permissions"    },
+    { src: "/assets/images/Login.png",         label: "Sign In"        },
+    { src: "/assets/images/RoleSelection.png", label: "Role Selection" },
+    { src: "/assets/images/Permissions.png",   label: "Permissions"    },
   ];
   const points = [
     "Email + OTP verification",
@@ -1229,8 +1229,8 @@ export function Slide19() {
 /* ============ SLIDE 20 — DONOR DASHBOARD ============ */
 export function Slide20() {
   const screens = [
-    { src: "/src/img/Home.png",           label: "Home"           },
-    { src: "/src/img/RequestDetail.jpeg", label: "Request Detail" },
+    { src: "/assets/images/Home.png",           label: "Home"           },
+    { src: "/assets/images/RequestDetail.jpeg", label: "Request Detail" },
   ];
   const points = [
     "Nearby requests sorted by urgency",
