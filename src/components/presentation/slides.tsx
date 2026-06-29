@@ -1173,63 +1173,54 @@ function PhoneMockup({
 
 /* ============ SLIDE 19 — AUTH ============ */
 export function Slide19() {
+  const screens = [
+    { src: "/src/img/Login.png",         label: "Sign In"        },
+    { src: "/src/img/RoleSelection.png", label: "Role Selection" },
+    { src: "/src/img/Permissions.png",   label: "Permissions"    },
+  ];
+  const points = [
+    "Email + OTP verification",
+    "Role-based onboarding",
+    "Granular permission consent",
+    "JWT session issued on success",
+  ];
   return (
     <div className="slide-shell">
       <SlideTitle kicker="App Screens" title="Authentication Flow" />
-      <div className="grid flex-1 grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5 items-center">
-        <div className="col-span-1 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <PhoneMockup title="Sign In" delay={0.1}>
-            <div className="mt-4 text-center font-display text-sm font-bold text-blood">
-              BLOOD BRIDGE
-            </div>
-            <div className="mt-4 rounded-md bg-white/10 p-1.5 text-center text-[8px]">
-              email@example.com
-            </div>
-            <div className="rounded-md bg-white/10 p-1.5 text-center text-[8px]">••••••••</div>
-            <div className="rounded-md bg-blood p-1.5 text-center text-[8px] font-bold">
-              CONTINUE
-            </div>
-          </PhoneMockup>
-          <PhoneMockup title="Role Selection" delay={0.35}>
-            <div className="mt-3 text-center text-[9px] font-semibold">Choose your role</div>
-            {["Donor", "Recipient", "Hospital"].map((r) => (
+      <div className="flex flex-1 items-center gap-8">
+        <div className="flex flex-1 items-center justify-center gap-6">
+          {screens.map(({ src, label }, i) => (
+            <motion.div
+              key={label}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.15, duration: 0.6, ease: [0.22,1,0.36,1] }}
+              className="flex flex-col items-center gap-3"
+            >
               <div
-                key={r}
-                className="rounded-md border border-blood/40 bg-blood/10 p-2 text-center text-[9px]"
+                className="relative overflow-hidden rounded-[2rem] border-2 border-white/15 bg-black shadow-[0_16px_48px_oklch(0_0_0/0.7)]"
+                style={{ width: "180px", height: "360px" }}
               >
-                {r}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-blood/20 to-transparent z-10" />
+                <img src={src} alt={label} className="h-full w-full object-contain" />
               </div>
-            ))}
-          </PhoneMockup>
-          <PhoneMockup title="Permissions" delay={0.6}>
-            <div className="mt-3 text-center text-[9px] font-semibold">Allow access</div>
-            <div className="flex items-center gap-1 rounded-md bg-white/5 p-1.5 text-[8px]">
-              <MapPin className="h-3 w-3 text-blood" /> Location
-            </div>
-            <div className="flex items-center gap-1 rounded-md bg-white/5 p-1.5 text-[8px]">
-              <Bell className="h-3 w-3 text-blood" /> Notifications
-            </div>
-            <div className="rounded-md bg-blood p-1.5 text-center text-[8px] font-bold">ALLOW</div>
-          </PhoneMockup>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{label}</span>
+            </motion.div>
+          ))}
         </div>
-        <motion.ul
+        <motion.div
           variants={stagger(0.12)}
           initial="hidden"
           animate="show"
-          className="col-span-2 flex flex-col gap-3 text-sm"
+          className="flex w-64 shrink-0 flex-col gap-4"
         >
-          {[
-            "Email + OTP verification",
-            "Role-based onboarding",
-            "Granular permission consent",
-            "JWT session issued on success",
-          ].map((p) => (
-            <motion.li key={p} variants={fadeUp} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blood" />
-              <span>{p}</span>
-            </motion.li>
+          {points.map((p) => (
+            <motion.div key={p} variants={fadeUp} className="flex items-start gap-3 rounded-xl border border-white/10 bg-card/50 px-5 py-4">
+              <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-blood" />
+              <span className="text-lg leading-snug">{p}</span>
+            </motion.div>
           ))}
-        </motion.ul>
+        </motion.div>
       </div>
     </div>
   );
@@ -1237,132 +1228,60 @@ export function Slide19() {
 
 /* ============ SLIDE 20 — DONOR DASHBOARD ============ */
 export function Slide20() {
-  return (
-    <div className="slide-shell">
-      <SlideTitle kicker="App Screens" title="Donor Dashboard" />
-      <div className="grid flex-1 grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5 items-center">
-        <div className="col-span-1 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <PhoneMockup title="Home" delay={0.1}>
-            <div className="mt-3 text-[9px] font-semibold">Hi, Ahmed 👋</div>
-            <div className="rounded-md bg-blood/20 p-2 text-[8px]">
-              <div className="font-bold text-blood">URGENT · O−</div>
-              <div className="opacity-70">Assiut · 3.2 km</div>
-            </div>
-            <div className="rounded-md bg-white/5 p-2 text-[8px]">A+ · 5 km</div>
-            <div className="rounded-md bg-white/5 p-2 text-[8px]">B+ · 7 km</div>
-          </PhoneMockup>
-          <PhoneMockup title="Request Detail" delay={0.35}>
-            <div className="mt-3 rounded-md bg-blood/20 p-2 text-center text-[10px] font-bold text-blood">
-              O−
-            </div>
-            <div className="text-[8px] opacity-70">Assiut University Hospital</div>
-            <div className="text-[8px] opacity-70">3.2 km · 6 min drive</div>
-            <div className="rounded-md bg-blood p-1.5 text-center text-[8px] font-bold">
-              I CAN DONATE
-            </div>
-          </PhoneMockup>
-          <PhoneMockup title="My Impact" delay={0.6}>
-            <div className="mt-3 text-center text-[9px]">Lives Touched</div>
-            <div className="text-center font-display text-2xl font-bold text-blood">12</div>
-            <div className="flex justify-center gap-1">
-              <Trophy className="h-4 w-4 text-blood" />
-              <Award className="h-4 w-4 text-blood" />
-              <Sparkles className="h-4 w-4 text-blood" />
-            </div>
-          </PhoneMockup>
-        </div>
-        <motion.ul
-          variants={stagger(0.12)}
-          initial="hidden"
-          animate="show"
-          className="col-span-2 flex flex-col gap-3 text-sm"
-        >
-          {[
-            "Nearby requests sorted by urgency",
-            "One-tap accept with route guidance",
-            "Eligibility countdown timer",
-            "Lifetime impact & badges",
-          ].map((p) => (
-            <motion.li key={p} variants={fadeUp} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blood" />
-              <span>{p}</span>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </div>
-    </div>
-  );
-}
-
-/* ============ SLIDE 21 — GAMIFICATION ============ */
-export function Slide21() {
-  const badges = [
-    { icon: Droplet, name: "First Drop" },
-    { icon: Zap, name: "Quick Responder" },
-    { icon: Heart, name: "Life Saver" },
-    { icon: MapPin, name: "Local Hero" },
-    { icon: TrendingUp, name: "Consistent Donor" },
-    { icon: Users, name: "Community Builder" },
+  const screens = [
+    { src: "/src/img/Home.png",           label: "Home"           },
+    { src: "/src/img/RequestDetail.jpeg", label: "Request Detail" },
+  ];
+  const points = [
+    "Nearby requests sorted by urgency",
+    "One-tap accept with route guidance",
+    "Eligibility countdown timer",
   ];
   return (
     <div className="slide-shell">
-      <SlideTitle kicker="Engagement" title="Gamification & Rewards" />
-      <motion.div
-        variants={stagger(0.1)}
-        initial="hidden"
-        animate="show"
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
-      >
-        {badges.map((b) => (
-          <motion.div
-            key={b.name}
-            variants={{
-              hidden: { opacity: 0, scale: 0 },
-              show: {
-                opacity: 1,
-                scale: 1,
-                transition: { type: "spring", stiffness: 200, damping: 12 },
-              },
-            }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-crimson to-blood shadow-[0_0_25px_oklch(0.6_0.25_27/0.5)]">
-              <b.icon className="h-9 w-9" />
-            </div>
-            <div className="text-center text-xs font-medium">{b.name}</div>
-          </motion.div>
-        ))}
-      </motion.div>
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <SlideTitle kicker="App Screens" title="Donor Dashboard" />
+      <div className="flex flex-1 items-center gap-8">
+        <div className="flex flex-1 items-center justify-center gap-10">
+          {screens.map(({ src, label }, i) => (
+            <motion.div
+              key={label}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.18, duration: 0.6, ease: [0.22,1,0.36,1] }}
+              className="flex flex-col items-center gap-3"
+            >
+              <div
+                className="relative overflow-hidden rounded-[2rem] border-2 border-white/15 bg-black shadow-[0_16px_48px_oklch(0_0_0/0.7)]"
+                style={{ width: "210px", height: "420px" }}
+              >
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-blood/20 to-transparent z-10" />
+                <img src={src} alt={label} className="h-full w-full object-contain" />
+              </div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{label}</span>
+            </motion.div>
+          ))}
+        </div>
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2 }}
-          className="rounded-2xl border border-blood/30 bg-blood/10 p-6 text-center"
+          variants={stagger(0.12)}
+          initial="hidden"
+          animate="show"
+          className="flex w-64 shrink-0 flex-col gap-4"
         >
-          <div className="font-display text-5xl font-bold text-blood text-glow">
-            ↑<CountUp to={67} suffix="%" />
-          </div>
-          <div className="mt-2 text-sm text-muted-foreground">Donor retention boost</div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.4 }}
-          className="rounded-2xl border border-blood/30 bg-blood/10 p-6 text-center"
-        >
-          <div className="font-display text-5xl font-bold text-blood text-glow">
-            ↑<CountUp to={43} suffix="%" />
-          </div>
-          <div className="mt-2 text-sm text-muted-foreground">Faster response time</div>
+          {points.map((p) => (
+            <motion.div key={p} variants={fadeUp} className="flex items-start gap-3 rounded-xl border border-white/10 bg-card/50 px-5 py-4">
+              <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-blood" />
+              <span className="text-lg leading-snug">{p}</span>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>
   );
 }
 
-/* ============ SLIDE 22 — NOTIFICATIONS ============ */
-export function Slide22() {
+
+/* ============ SLIDE 21 — NOTIFICATIONS ============ */
+export function Slide21() {
   const rows = [
     {
       label: "CRITICAL",
@@ -1432,8 +1351,8 @@ export function Slide22() {
   );
 }
 
-/* ============ SLIDE 23 — SECURITY ============ */
-export function Slide23() {
+/* ============ SLIDE 22 — SECURITY ============ */
+export function Slide22() {
   const items = [
     { icon: Lock, title: "JWT Tokens", desc: "Stateless authenticated sessions" },
     { icon: Shield, title: "AES-256", desc: "Encryption for PII at rest" },
@@ -1476,25 +1395,30 @@ export function Slide23() {
   );
 }
 
-/* ============ SLIDE 24 — DB SCHEMA ============ */
-export function Slide24() {
+/* ============ SLIDE 23 — DB SCHEMA ============ */
+export function Slide23() {
   const entities = [
-    { id: "users", title: "Users", x: 50, y: 50 },
-    { id: "requests", title: "BloodRequests", x: 350, y: 50 },
-    { id: "donations", title: "Donations", x: 650, y: 50 },
-    { id: "hospitals", title: "Hospitals", x: 50, y: 280 },
-    { id: "inventory", title: "Inventory", x: 350, y: 280 },
-    { id: "notifications", title: "Notifications", x: 650, y: 280 },
-    { id: "badges", title: "Badges", x: 350, y: 510 },
-  ];
+  { id: "users",             title: "Users",             x: 50,  y: 50  },
+  { id: "hospital",          title: "Hospital",          x: 350, y: 50  },
+  { id: "bloodrequest",      title: "BloodRequest",      x: 650, y: 50  },
+  { id: "donationprocess",   title: "DonationProcess",   x: 50,  y: 280 },
+  { id: "hospitalinventory", title: "HospitalInventory", x: 350, y: 280 },
+  { id: "notification",      title: "Notification",      x: 650, y: 280 },
+  { id: "topdonor",          title: "TopDonor",          x: 200, y: 510 },
+  { id: "blacklistedtoken",  title: "BlacklistedToken",  x: 500, y: 510 },
+];
   const lines = [
-    ["users", "requests"],
-    ["users", "donations"],
-    ["hospitals", "inventory"],
-    ["donations", "notifications"],
-    ["users", "badges"],
-    ["requests", "donations"],
-  ];
+  ["users",        "bloodrequest"],
+  ["users",        "donationprocess"],
+  ["users",        "notification"],
+  ["users",        "topdonor"],
+  ["users",        "hospital"],
+  ["hospital",     "bloodrequest"],
+  ["hospital",     "donationprocess"],
+  ["hospital",     "hospitalinventory"],
+  ["bloodrequest", "donationprocess"],
+  ["bloodrequest", "notification"],
+];
   const get = (id: string) => entities.find((e) => e.id === id)!;
   return (
     <div className="slide-shell">
@@ -1556,12 +1480,12 @@ export function Slide24() {
   );
 }
 
-/* ============ SLIDE 25 — TESTING ============ */
-export function Slide25() {
+/* ============ SLIDE 24 — TESTING ============ */
+export function Slide24() {
   const stats = [
     { n: 95, suffix: "%", label: "Code Coverage", ring: true },
-    { n: 47, suffix: "", label: "API Endpoints" },
-    { n: 50, suffix: "", label: "Beta Testers" },
+    { n: 60, suffix: "", label: "API Endpoints" },
+    { n: 6, suffix: "", label: "Beta Testers" },
     { n: 200, suffix: "ms", label: "Response Time", prefix: "<" },
   ];
   return (
@@ -1618,8 +1542,8 @@ export function Slide25() {
   );
 }
 
-/* ============ SLIDE 26 — CHALLENGES ============ */
-export function Slide26() {
+/* ============ SLIDE 25 — CHALLENGES ============ */
+export function Slide25() {
   const rows = [
     ["Sparse data for AI training", "Synthetic dataset + transfer learning"],
     ["Real-time matching at scale", "SignalR hubs + Redis pub/sub layer"],
@@ -1663,8 +1587,8 @@ export function Slide26() {
   );
 }
 
-/* ============ SLIDE 27 — PERFORMANCE ============ */
-export function Slide27() {
+/* ============ SLIDE 26 — PERFORMANCE ============ */
+export function Slide26() {
   const stats = [
     { n: 2, suffix: "s", prefix: "<", label: "Match Time" },
     { n: 99.7, suffix: "%", decimals: 1, label: "Uptime" },
@@ -1694,8 +1618,8 @@ export function Slide27() {
   );
 }
 
-/* ============ SLIDE 28 — COMPARISON ============ */
-export function Slide28() {
+/* ============ SLIDE 27 — COMPARISON ============ */
+export function Slide27() {
   const rows: [string, string, string, string][] = [
     ["Verified donors", "✅", "❌", "⚠️"],
     ["Real-time matching", "✅", "❌", "❌"],
@@ -1771,8 +1695,8 @@ export function Slide28() {
   );
 }
 
-/* ============ SLIDE 29 — ROADMAP ============ */
-export function Slide29() {
+/* ============ SLIDE 28 — ROADMAP ============ */
+export function Slide28() {
   const phases = [
     {
       tag: "Phase 2",
@@ -1830,8 +1754,8 @@ export function Slide29() {
   );
 }
 
-/* ============ SLIDE 30 — IMPACT ============ */
-export function Slide30() {
+/* ============ SLIDE 29 — IMPACT ============ */
+export function Slide29() {
   const stats = [
     { n: 70, suffix: "%", label: "Faster response" },
     { n: 3, suffix: "x", label: "More donors reached" },
@@ -1871,8 +1795,8 @@ export function Slide30() {
   );
 }
 
-/* ============ SLIDE 31 — ACKNOWLEDGEMENTS ============ */
-export function Slide31() {
+/* ============ SLIDE 30 — ACKNOWLEDGEMENTS ============ */
+export function Slide30() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -1922,8 +1846,8 @@ export function Slide31() {
   );
 }
 
-/* ============ SLIDE 32 — Q&A ============ */
-export function Slide32() {
+/* ============ SLIDE 31 — Q&A ============ */
+export function Slide31() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-30" />
@@ -1967,8 +1891,8 @@ export function Slide32() {
   );
 }
 
-/* ============ SLIDE 33 — THANK YOU ============ */
-export function Slide33() {
+/* ============ SLIDE 32 — THANK YOU ============ */
+export function Slide32() {
   return (
     <div className="relative flex h-full flex-col items-center justify-center overflow-hidden radial-vignette">
       <div className="absolute inset-0 bg-grid opacity-40" />
@@ -2017,75 +1941,20 @@ export function Slide33() {
 }
 
 export const ALL_SLIDES = [
-  Slide01,
-  Slide02,
-  Slide03,
-  Slide04,
-  Slide05,
-  Slide06,
-  Slide07,
-  Slide08,
-  Slide09,
-  Slide10,
-  Slide11,
-  Slide12,
-  Slide13,
-  Slide14,
-  Slide15,
-  Slide16,
-  Slide17,
-  Slide18,
-  Slide19,
-  Slide20,
-  Slide21,
-  Slide22,
-  Slide23,
-  Slide24,
-  Slide25,
-  Slide26,
-  Slide27,
-  Slide28,
-  Slide29,
-  Slide30,
-  Slide31,
-  Slide32,
-  Slide33,
+  Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08, Slide09, Slide10,
+  Slide11, Slide12, Slide13, Slide14, Slide15, Slide16, Slide17, Slide18, Slide19, Slide20,
+  Slide21, Slide22, Slide23, Slide24, Slide25, Slide26, Slide27, Slide28, Slide29, Slide30,
+  Slide31, Slide32,
 ];
 
 export const SLIDE_TITLES = [
-  "Welcome",
-  "Team",
-  "Abstract",
-  "Problem · Delay",
-  "Problem · Fragmentation",
-  "Problem · Inventory",
-  "Solution",
-  "Stakeholders",
-  "Architecture",
-  "Flutter Stack",
-  ".NET Stack",
-  "AI Overview",
-  "Emergency Classification",
-  "Intelligent Donor Matching",
-  "Machine Learning Models",
-  "AI Workflow & Benefits",
-  "Geolocation",
-  "AI Matching",
-  "Auth Flow",
-  "Donor Dashboard",
-  "Gamification",
-  "Notifications",
-  "Security",
-  "Database",
-  "Testing",
-  "Challenges",
-  "Performance",
-  "Comparison",
-  "Roadmap",
-  "Impact",
-  "Acknowledgements",
-  "Q&A",
-  "Thank You",
+  "Welcome", "Team", "Abstract", "Problem · Delay", "Problem · Fragmentation",
+  "Problem · Inventory", "Solution", "Stakeholders", "Architecture", "Flutter Stack",
+  ".NET Stack", "AI Overview", "Emergency Classification", "Intelligent Donor Matching",
+  "Machine Learning Models", "AI Workflow & Benefits", "Geolocation", "AI Matching",
+  "Auth Flow", "Donor Dashboard", "Notifications", "Security", "Database", "Testing",
+  "Challenges", "Performance", "Comparison", "Roadmap", "Impact", "Acknowledgements",
+  "Q&A", "Thank You",
 ];
 
 // keep helper used internally
