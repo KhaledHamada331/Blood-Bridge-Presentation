@@ -1,3 +1,8 @@
+import LoginImg from "@/assets/images/Login.png";
+import RoleSelectionImg from "@/assets/images/RoleSelection.png";
+import PermissionsImg from "@/assets/images/Permissions.png";
+import HomeImg from "@/assets/images/Home.png";
+import RequestDetailImg from "@/assets/images/RequestDetail.jpeg";
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
@@ -1174,10 +1179,10 @@ function PhoneMockup({
 /* ============ SLIDE 19 — AUTH ============ */
 export function Slide19() {
   const screens = [
-    { src: "/assets/images/Login.png",         label: "Sign In"        },
-    { src: "/assets/images/RoleSelection.png", label: "Role Selection" },
-    { src: "/assets/images/Permissions.png",   label: "Permissions"    },
-  ];
+  { src: LoginImg, label: "Sign In" },
+  { src: RoleSelectionImg, label: "Role Selection" },
+  { src: PermissionsImg, label: "Permissions" },
+];
   const points = [
     "Email + OTP verification",
     "Role-based onboarding",
@@ -1229,9 +1234,9 @@ export function Slide19() {
 /* ============ SLIDE 20 — DONOR DASHBOARD ============ */
 export function Slide20() {
   const screens = [
-    { src: "/assets/images/Home.png",           label: "Home"           },
-    { src: "/assets/images/RequestDetail.jpeg", label: "Request Detail" },
-  ];
+  { src: HomeImg, label: "Home" },
+  { src: RequestDetailImg, label: "Request Detail" },
+];
   const points = [
     "Nearby requests sorted by urgency",
     "One-tap accept with route guidance",
